@@ -1,0 +1,14 @@
+My dotfiles.
+
+.bash_profile
+.bashrc
+.vimrc
+  color
+    zenburn
+  plugins
+    pathogen
+    neocomplete
+
+.screenrc
+  require xterm-256color 
+

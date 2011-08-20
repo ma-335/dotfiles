@@ -1,8 +1,9 @@
-"pathogen
+"for Pathogen
 call pathogen#infect()
+
+"Settings
 syntax on
 filetype plugin indent on
-
 colorscheme zenburn
 set number
 set nowrap
@@ -13,15 +14,18 @@ set autoindent
 "scheme.vim
 autocmd FileType scheme :let is_gauche=1
 
-"NeoCompleteSettings
-let g:neocomplcache_enable_at_startup = 1
+"for NERDTree
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
 
-" Recommended key-mappings.
-" " <CR>: close popup and save indent.
+"for NeoCompleteSettings
+let g:neocomplcache_enable_at_startup = 1
+""Recommended key-mappings.
+""<CR>: close popup and save indent.
 inoremap <expr><CR>  pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
-" " <TAB>: completion.
+""<TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" " <C-h>, <BS>: close popup and delete backword char.
+""<C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()

@@ -1,7 +1,11 @@
-"for Pathogen
+"+------------------+"
+"|     Pathogen     |"
+"+------------------+"
 call pathogen#infect()
 
-"Settings
+"+------------------+"
+"| GeneralSettings  |"
+"+------------------+"
 syntax on
 filetype plugin indent on
 colorscheme zenburn
@@ -10,31 +14,73 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set autoindent
+set nowrap
+set expandtab
 
-"scheme.vim
-autocmd FileType scheme :let is_gauche=1
+"+------------------+"
+"|     NERDTree     |"
+"+------------------+"
+let NERDTreeShowHidden = 1
 
-"for NERDTree
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
-
-"for NeoCompleteSettings
+"+------------------+"
+"|  NeoComplcache   |"
+"+------------------+"
 let g:neocomplcache_enable_at_startup = 1
-""Recommended key-mappings.
-""<CR>: close popup and save indent.
-inoremap <expr><CR>  pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
-""<TAB>: completion.
+
+" Plugin key-mappings.
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>  neocomplcache#undo_completion()
+inoremap <expr><C-l>  neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>   pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
+" <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-""<C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h>  neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>   neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><Down> neocomplcache#cancel_popup()."\<Down>"
+inoremap <expr><Up>   neocomplcache#cancel_popup()."\<Up>"
 
 " Enable omni completion.
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType c			setlocal omnifunc=ccomplete#Complete
+autocmd FileType python		setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml 		setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType html 		setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType markdown 	setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css 		setlocal omnifunc=csscomplete#CompleteCSS
+
+"+------------------+"
+"|    Templates     |"
+"+------------------+"
+autocmd BufNewFile *.scm 0r ~/.vim/templates/template.scm
+
+"+------------------+"
+"|  Scheme/Gauche   |"
+"+------------------+"
+"require http://e.tir.jp/wiliki?vim%3Ascheme.vim
+autocmd FileType scheme :let is_gauche=1
+autocmd FileType scheme :set shiftwidth=2
+autocmd FileType scheme :set tabstop=2
+autocmd FileType scheme :set expandtab
+
+"+------------------+"
+"|      C/C++       |"
+"+------------------+"
+autocmd FileType c :set shiftwidth=2
+autocmd FileType c :set tabstop=2
+autocmd FileType c :set expandtab
+
+"+------------------+"
+"|     python       |"
+"+------------------+"
+autocmd FileType python :set shiftwidth=4
+autocmd FileType python :set tabstop=4
+autocmd FileType python :set noexpandtab
+
+

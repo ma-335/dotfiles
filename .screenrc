@@ -6,3 +6,9 @@ termcapinfo xterm* ti@:te@
 termcapinfo xterm* 'Co#256:pa#32767:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
 scrollback 5000
 
+#screen
+#split -v
+#focus
+#screen
+#resize -h 80
+

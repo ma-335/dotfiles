@@ -1,3 +1,4 @@
+escape ^Zz
 autodetach on
 startup_message off
 hardstatus alwayslastline '[%m/%d %02c] %-w%{= KW}%n %t%{-}%+w'

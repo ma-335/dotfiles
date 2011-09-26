@@ -21,6 +21,8 @@ set expandtab
 "|     NERDTree     |"
 "+------------------+"
 let NERDTreeShowHidden = 1
+map <C-n> :NERDTreeToggle<CR>
+imap <C-n> :NERDTreeToggle<CR>
 
 "+------------------+"
 "|  NeoComplcache   |"

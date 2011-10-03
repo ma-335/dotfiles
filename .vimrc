@@ -8,6 +8,7 @@ call pathogen#infect()
 "+------------------+"
 syntax on
 filetype plugin indent on
+let zenburn_high_Contrast=1
 colorscheme zenburn
 set number
 set nowrap
@@ -16,13 +17,14 @@ set shiftwidth=4
 set autoindent
 set nowrap
 set expandtab
+nnoremap <expr><S-u> :redo<CR>
 
 "+------------------+"
 "|     NERDTree     |"
 "+------------------+"
 let NERDTreeShowHidden = 1
-map <C-n> :NERDTreeToggle<CR>
-imap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n><C-n> :NERDTreeToggle<CR>
+nnoremap <C-n><C-m> :NERDTreeMirror<CR>
 
 "+------------------+"
 "|  NeoComplcache   |"
@@ -40,10 +42,10 @@ inoremap <expr><C-l>  neocomplcache#complete_common_string()
 inoremap <expr><CR>   pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h>  neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>   neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 inoremap <expr><Down> neocomplcache#cancel_popup()."\<Down>"
 inoremap <expr><Up>   neocomplcache#cancel_popup()."\<Up>"

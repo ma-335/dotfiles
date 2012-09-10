@@ -9,12 +9,41 @@ bindkey "\e[Z" reverse-menu-complete
 #+------------+
 #|   PROMPT   |
 #+------------+
-autoload colors
-colors
+autoload colors; colors
+
 PROMPT="%{${fg[green]}%}%m %(!.#.$) %{${reset_color}%}"
 PROMPT2="%{${fg[green]}%}%_> %{${reset_color}%}"
 SPROMPT="correct: %R -> %r [y,n,a,e]? "
 RPROMPT="%{${fg[glay]}%}[%~]%{${reset_color}%}"
+
+#+------------+
+#|  VCS_INFO  |
+#+------------+
+autoload -Uz add-zsh-hook
+autoload -Uz colors; colors
+autoload -Uz is-at-least
+
+if is-at-least 4.3.10; then
+  autoload -Uz vcs_info
+
+  zstyle ':vcs_info:*' enable git svn
+  zstyle ':vcs_info:*' formats '(%s:%b)'
+  zstyle ':vcs_info:*' actionformats '(%s:%b|%a)'
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "+"
+  zstyle ':vcs_info:git:*' unstagedstr "-"
+  zstyle ':vcs_info:git:*' formats '(%s:%b) %c%u'
+  zstyle ':vcs_info:git:*' actionformats '(%s:%b|%a) %c%u'
+
+  function _update_vcs_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "${vcs_info_msg_0_}" ]] && psvar[1]="${vcs_info_msg_0_}"
+  }
+
+  add-zsh-hook precmd _update_vcs_info_msg
+  RPROMPT="%1(v|%F{blue}%1v%f|) [%~]"
+fi
 
 #+------------+
 #|   HISTORY  |
@@ -39,19 +68,17 @@ bindkey "^[u" undo
 bindkey "^[r" redo
 stty stop undef
 typeset -U path
-export EDITOR=vim
+export EDITOR=emacs
 bindkey -e
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 #+-----------+
 #| URL QUOTE |
 #+-----------+
-autoload -U is-at-least
 if is-at-least 4.3.11; then
     autoload -Uz url-quote-magic
     zle -N self-insert url-quote-magic
 fi
-
 
 function chpwd() { ls }
 
@@ -66,3 +93,8 @@ if [ ${STY} ]; then
     echo -ne "\ek$(basename $(print -P %~))\e\\"
   }
 fi
+
+#+------------+
+#| GNU Emacs  |
+#+------------+
+[[ ${TERM} = "eterm-color" ]] && TERM=xterm-color

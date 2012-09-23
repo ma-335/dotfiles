@@ -1,16 +1,10 @@
-escape ^Zz
+escape ^Tt
 autodetach on
 startup_message off
 hardstatus alwayslastline '[%m/%d %02c] %-w%{= KW}%n %t%{-}%+w'
 term "xterm-256color"
 termcapinfo xterm* ti@:te@
 termcapinfo xterm* 'Co#256:pa#32767:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
-scrollback 5000
+scrollback 50000
 shell -$SHELL
-
-#screen
-#split -v
-#focus
-#screen
-#resize -h 80
 

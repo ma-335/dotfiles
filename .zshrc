@@ -5,6 +5,7 @@ fpath=(~/.zsh ${fpath})
 autoload -U compinit
 compinit
 bindkey "\e[Z" reverse-menu-complete
+zstyle ':completion:*' menu select=1
 
 #+------------+
 #|   PROMPT   |

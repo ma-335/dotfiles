@@ -1,4 +1,4 @@
-if [ ! ${STY} ]; then 
-    screen -D -R
+if [ ! ${STY} ]; then
+    tmux a
 fi
 

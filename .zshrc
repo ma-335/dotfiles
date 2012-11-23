@@ -1,4 +1,9 @@
 #+------------+
+#|  antigen   |
+#+------------+
+source ~/.zsh/antigen.conf.zsh
+
+#+------------+
 #| COMPLETION |
 #+------------+
 fpath=(~/.zsh ${fpath})
@@ -47,7 +52,7 @@ if is-at-least 4.3.10; then
 fi
 
 #+------------+
-#|   HISTORY  |
+#|  HISTORY   |
 #+------------+
 HISTFILE=~/.zsh-history
 HISTSIZE=1000000
@@ -99,3 +104,11 @@ fi
 #| GNU Emacs  |
 #+------------+
 [[ ${TERM} = "eterm-color" ]] && TERM=xterm-color
+
+#+------------+
+#|    RVM     |
+#+------------+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
+
+

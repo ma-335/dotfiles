@@ -1,0 +1,11 @@
+[user]
+	name = Masaori Koshiba
+	email = masaori335@gmail.com
+[color]
+	ui = auto
+[core]
+	excludesfile = /Users/masaori/.gitignore
+[alias]
+	s = status
+	a = add
+	r = reset

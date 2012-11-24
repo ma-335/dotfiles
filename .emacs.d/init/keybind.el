@@ -1,7 +1,13 @@
-(global-set-key (kbd "M-<up>") 'windmove-up)
-(global-set-key (kbd "M-<down>") 'windmove-down)
+;;; NOTE: iTerm2 + tmux-1.7 hack
+(define-key input-decode-map "\e\eOA" [(meta up)])
+(define-key input-decode-map "\e\eOB" [(meta down)])
+(define-key input-decode-map "\e\eOC" [(meta right)])
+(define-key input-decode-map "\e\eOD" [(meta left)])
+
+(global-set-key (kbd "M-<up>")	  'windmove-up)
+(global-set-key (kbd "M-<down>")  'windmove-down)
 (global-set-key (kbd "M-<right>") 'windmove-right)
-(global-set-key (kbd "M-<left>") 'windmove-left)
+(global-set-key (kbd "M-<left>")  'windmove-left)
 
 (global-set-key (kbd "C-S-/") 'redo)
 

@@ -13,5 +13,3 @@
 
 ;;; Cococa-Emacs
 (if (eq 'ns (window-system)) (load "./init/cocoa.el"))
-
-(set-face-background 'default "black")

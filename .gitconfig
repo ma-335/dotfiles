@@ -6,7 +6,10 @@
 [core]
 	excludesfile = /Users/masaori/.gitignore
 [alias]
-	s = status
 	a = add
-	r = reset
+	b = branch
+	c = checkout
 	d = diff
+	r = reset
+	s = status
+

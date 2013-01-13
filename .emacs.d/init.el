@@ -12,4 +12,4 @@
 (load "~/.emacs.d/init/face.el")
 
 ;;; Cococa-Emacs
-(if (eq 'ns (window-system)) (load "./init/cocoa.el"))
+(if (eq 'ns (window-system)) (load "~/.emacs.d/init/cocoa.el"))

@@ -1,3 +1,7 @@
+autoload -Uz add-zsh-hook
+autoload -Uz colors; colors
+autoload -Uz is-at-least
+
 #+------------+
 #|  antigen   |
 #+------------+
@@ -15,7 +19,6 @@ zstyle ':completion:*' menu select=1
 #+------------+
 #|   PROMPT   |
 #+------------+
-autoload colors; colors
 
 PROMPT="%{${fg[green]}%}%m %(!.#.$) %{${reset_color}%}"
 PROMPT2="%{${fg[green]}%}%_> %{${reset_color}%}"
@@ -25,10 +28,6 @@ RPROMPT="%{${fg[glay]}%}[%~]%{${reset_color}%}"
 #+------------+
 #|  VCS_INFO  |
 #+------------+
-autoload -Uz add-zsh-hook
-autoload -Uz colors; colors
-autoload -Uz is-at-least
-
 if is-at-least 4.3.10; then
   autoload -Uz vcs_info
 
@@ -82,8 +81,8 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 #| URL QUOTE |
 #+-----------+
 if is-at-least 4.3.11; then
-    autoload -Uz url-quote-magic
-    zle -N self-insert url-quote-magic
+  autoload -Uz url-quote-magic
+  zle -N self-insert url-quote-magic
 fi
 
 function chpwd() { ls }
@@ -104,22 +103,20 @@ fi
 #|    tmux    |
 #+------------+
 function _show_ssh_info() {
-  if [ $SHLVL -gt 1 ]; then
-    if [ `echo ${1} | cut -d' ' -f1` = "ssh" ]; then
-      local host=""
+  if [ $SHLVL -gt 1 -a `echo ${1} | cut -d' ' -f1` = "ssh" ]; then
+    local host=""
 
-      for x in `echo ${1}`
-      do
-	if [ ${x} = "ssh" ]; then
-	  continue
-	elif [ `echo ${x} | cut -c1` != "-" ]; then
-	  host=${x}
-	  break
-	fi
-      done
+    for x in `echo ${1}`
+    do
+      if [ ${x} = "ssh" ]; then
+	continue
+      elif [ `echo ${x} | cut -c1` != "-" ]; then
+	host=${x}
+	break
+      fi
+    done
 
-      `tmux rename-window "ssh://${host}"`
-    fi
+    `tmux rename-window "ssh://${host}"`
   fi
 }
 
@@ -129,9 +126,3 @@ add-zsh-hook preexec _show_ssh_info
 #| GNU Emacs  |
 #+------------+
 [[ ${TERM} = "eterm-color" ]] && TERM=xterm-color
-
-#+------------+
-#|    RVM     |
-#+------------+
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm

@@ -19,4 +19,9 @@ alias ccl='rlwrap ccl'
 alias sbcl='rlwrap sbcl'
 alias clj='rlwrap clj'
 
+#+------------+
+#|    RVM     |
+#+------------+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

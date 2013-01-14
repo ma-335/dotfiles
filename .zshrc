@@ -101,6 +101,31 @@ if [ ${STY} ]; then
 fi
 
 #+------------+
+#|    tmux    |
+#+------------+
+function _show_ssh_info() {
+  if [ $SHLVL -gt 1 ]; then
+    if [ `echo ${1} | cut -d' ' -f1` = "ssh" ]; then
+      local host=""
+
+      for x in `echo ${1}`
+      do
+	if [ ${x} = "ssh" ]; then
+	  continue
+	elif [ `echo ${x} | cut -c1` != "-" ]; then
+	  host=${x}
+	  break
+	fi
+      done
+
+      `tmux rename-window "ssh://${host}"`
+    fi
+  fi
+}
+
+add-zsh-hook preexec _show_ssh_info
+
+#+------------+
 #| GNU Emacs  |
 #+------------+
 [[ ${TERM} = "eterm-color" ]] && TERM=xterm-color
@@ -110,5 +135,3 @@ fi
 #+------------+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source ~/.rvm/scripts/rvm
-
-

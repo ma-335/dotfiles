@@ -7,15 +7,13 @@
 (define-key minibuffer-local-completion-map "\C-w" 'backward-kill-word)
 
 (setq system-uses-terminfo nil)
-
 (setq backup-directory-alist `(("." . "~/.emacs.d/backup")))
-
-(fset 'yes-or-no-p 'y-or-n-p)
-
 (setq-default truncate-lines t)
 (setq-default truncate-partial-width-windows t)
+(setq vc-follow-symlinks t)
 
 (show-paren-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;;; linum
 (require 'linum)
@@ -24,4 +22,3 @@
     ad-do-it))
 (global-linum-mode t)
 (setq linum-format "%3d ")
-

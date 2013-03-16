@@ -13,11 +13,13 @@ export PATH=$PATH:$ZOOKEEPER_HOME/bin
 #|   ALIAS   |
 #+-----------+
 alias ls='ls -G'
+alias la='ls -la'
 alias grep="grep --color"
 alias gosh='rlwrap --file=/Users/masaori/.rlwrap/gosh_completions gosh'
 alias ccl='rlwrap ccl'
 alias sbcl='rlwrap sbcl'
 alias clj='rlwrap clj'
+alias ctags='/usr/local/bin/ctags'
 
 #+------------+
 #|    RVM     |

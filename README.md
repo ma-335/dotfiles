@@ -1,6 +1,6 @@
 # My dotfiles.
 
-## Environmet
+## Required Environmet
 - zsh 4.3.10+
   - antigen
 - tmux 1.7+
@@ -12,4 +12,10 @@
 ## Setup
 ```sh
 $ setup.sh
+```
+
+## Install Emacs and Exuberant Ctags by Homebrew
+```
+$ brew install emacs --keep-ctags
+$ brew install ctags
 ```

@@ -11,3 +11,6 @@
         sh-indent-for-case-alt '+))
 
 (add-hook 'sh-mode-hook 'setup-sh-mode-indent)
+
+;;; scala
+(require 'scala-mode-auto)

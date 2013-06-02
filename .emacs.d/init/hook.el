@@ -14,3 +14,9 @@
 
 ;;; scala
 (require 'scala-mode-auto)
+
+;;; c++
+;;;   http://www.emacswiki.org/emacs/CPlusPlusMode
+(defun my-c++-mode-hook ()
+  (c-set-style "stroustrup"))
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)

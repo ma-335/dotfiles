@@ -10,6 +10,7 @@
 (load "~/.emacs.d/init/hook.el")
 (load "~/.emacs.d/init/flymake.el")
 (load "~/.emacs.d/init/face.el")
+(load "~/.emacs.d/init/ginger-api.el")　;; https://gist.github.com/syohex/5457732
 
 ;;; Cococa-Emacs
 (if (eq 'ns (window-system)) (load "~/.emacs.d/init/cocoa.el"))

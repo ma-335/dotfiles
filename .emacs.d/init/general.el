@@ -11,6 +11,9 @@
 (setq-default truncate-lines t)
 (setq-default truncate-partial-width-windows t)
 (setq vc-follow-symlinks t)
+(setq require-final-newline t)
+(setq-default indent-tabs-mode nil)
+(setq c-basic-offset 2)
 
 (show-paren-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)

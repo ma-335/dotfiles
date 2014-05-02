@@ -20,3 +20,8 @@
 (defun my-c++-mode-hook ()
   (c-set-style "stroustrup"))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
+
+;;; go
+(require 'go-mode-load)
+(add-hook 'go-mode-hook
+	  '(lambda () (setq tab-width 2)))

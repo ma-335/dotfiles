@@ -3,3 +3,5 @@
 .emacs.d/backup/
 .emacs.d/elpa/
 .emacs.d/url/
+*.mo
+_build/

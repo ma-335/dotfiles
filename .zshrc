@@ -5,12 +5,12 @@ autoload -Uz is-at-least
 #+------------+
 #|  antigen   |
 #+------------+
-source ~/.zsh/antigen.conf.zsh
+#source ~/.zsh/antigen.conf.zsh
 
 #+------------+
 #| COMPLETION |
 #+------------+
-fpath=(~/.zsh ${fpath})
+fpath=(~/.zsh ~/.zsh/completion ${fpath})
 autoload -U compinit
 compinit
 bindkey "\e[Z" reverse-menu-complete
@@ -73,7 +73,7 @@ bindkey "^[u" undo
 bindkey "^[r" redo
 stty stop undef
 typeset -U path
-export EDITOR=emacs
+#export EDITOR=emacs
 bindkey -e
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 

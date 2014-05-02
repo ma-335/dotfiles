@@ -5,6 +5,7 @@
 	ui = auto
 [core]
 	excludesfile = /Users/masaori/.gitignore
+	autocrlf = input
 [alias]
 	a = add
 	b = branch
@@ -12,4 +13,9 @@
 	d = diff
 	r = reset
 	s = status
-
+[pager]
+        log = diff-highlight | less
+        show = diff-highlight | less
+        diff = diff-highlight | less
+[push]
+	default = simple

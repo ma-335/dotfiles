@@ -3,5 +3,5 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
-(defvar masaori/packages '(zenburn-theme dockerfile-mode))
+(defvar masaori/packages '(zenburn-theme dockerfile-mode clojure-mode nrepl))
 (dolist (pkg masaori/packages) (unless (package-installed-p pkg) (package-install pkg)))

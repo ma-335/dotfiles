@@ -10,7 +10,7 @@ autoload -Uz is-at-least
 #+------------+
 #| COMPLETION |
 #+------------+
-fpath=(~/.zsh ~/.zsh/completion ${fpath})
+fpath=(~/.zsh ~/.zsh/completion /usr/local/share/zsh/site-functions ${fpath})
 autoload -U compinit
 compinit
 bindkey "\e[Z" reverse-menu-complete

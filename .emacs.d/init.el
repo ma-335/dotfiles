@@ -7,6 +7,7 @@
 (load "~/.emacs.d/init/languages.el")
 (load "~/.emacs.d/init/flymake.el")
 (load "~/.emacs.d/init/face.el")
+(load "~/.emacs.d/init/longlines-jp.el")
 (load "~/.emacs.d/init/kibit.el")
 (load "/usr/local/Cellar/gettext/0.18.3.1/share/emacs/site-lisp/po-compat.el")
 (load "/usr/local/Cellar/gettext/0.18.3.1/share/emacs/site-lisp/po-mode.el")

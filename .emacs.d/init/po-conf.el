@@ -23,13 +23,13 @@
 	  (kill-buffer tmp-buf)
 	  (delete-file tmp-file)))))
 
-(defun toggle-truncate-lines ()
-  "Toggle truncate lines"
-  (interactive)
-  (if truncate-lines
-      (setq truncate-lines nil)
-    (setq truncate-lines t))
-  (recenter))
+;; (defun toggle-truncate-lines ()
+;;   "Toggle truncate lines"
+;;   (interactive)
+;;   (if truncate-lines
+;;       (setq truncate-lines nil)
+;;     (setq truncate-lines t))
+;;   (recenter))
 
-(add-hook 'po-subedit-mode-hook '(lambda () (longlines-mode 1)))
-(add-hook 'po-subedit-exit-hook '(lambda () (longlines-mode 0)))
+;; (add-hook 'po-subedit-mode-hook '(lambda () (longlines-jp-mode)))
+;; (add-hook 'po-subedit-exit-hook '(lambda () (longlines-jp-mode)))

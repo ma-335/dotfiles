@@ -17,3 +17,5 @@
 (global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
 
 (global-set-key (kbd "C-x j") 'delete-indentation)
+
+(global-set-key (kbd "C-x C-b") 'buffer-menu)

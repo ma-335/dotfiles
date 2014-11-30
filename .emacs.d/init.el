@@ -5,7 +5,8 @@
 (load "~/.emacs.d/init/keybind.el")
 (load "~/.emacs.d/init/mode.el")
 (load "~/.emacs.d/init/languages.el")
-(load "~/.emacs.d/init/flymake.el")
+;; (load "~/.emacs.d/init/flymake.el")
+(load "~/.emacs.d/init/flycheck.el")
 (load "~/.emacs.d/init/face.el")
 (load "~/.emacs.d/init/longlines-jp.el")
 (load "~/.emacs.d/init/kibit.el")
@@ -24,6 +25,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(custom-safe-themes (quote ("bf7ed640479049f1d74319ed004a9821072c1d9331bc1147e01d22748c18ebdf" default)))
+ '(fci-rule-color "#383838")
  '(show-paren-mode t)
  '(text-mode-hook (quote (text-mode-hook-identify)))
  '(tool-bar-mode nil)

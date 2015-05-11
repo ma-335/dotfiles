@@ -25,3 +25,5 @@
     ad-do-it))
 (global-linum-mode t)
 (setq linum-format "%3d ")
+
+(menu-bar-mode 0)

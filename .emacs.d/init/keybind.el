@@ -13,8 +13,8 @@
 
 (global-set-key (kbd "<backtab>") 'indent-region)
 
-(global-set-key (kbd "C-v") 'View-scroll-half-page-forward)
-(global-set-key (kbd "M-v") 'View-scroll-half-page-backward)
+(global-set-key (kbd "M-n") (kbd "C-u 10 C-n"))
+(global-set-key (kbd "M-p") (kbd "C-u 10 C-p"))
 
 (global-set-key (kbd "C-x j") 'delete-indentation)
 

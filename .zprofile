@@ -14,7 +14,7 @@ export JAVA_HOME=/usr
 #+-----------------+
 #| Docker on MacOS |
 #+-----------------+
-eval "$(boot2docker shellinit)"
+eval `boot2docker shellinit 2>/dev/null`
 
 #+-----------+
 #|   ALIAS   |

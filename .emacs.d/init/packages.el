@@ -1,7 +1,8 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-(defvar masaori/packages '(zenburn-theme flycheck web-mode dockerfile-mode clojure-mode nrepl rust-mode ))
+(defvar masaori/packages '(color-theme zenburn-theme flycheck web-mode clojure-mode go-mode markdown-mode))
 (dolist (pkg masaori/packages) (unless (package-installed-p pkg) (package-install pkg)))

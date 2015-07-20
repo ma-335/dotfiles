@@ -14,6 +14,9 @@ export JAVA_HOME=/usr
 #+-----------------+
 #| Docker on MacOS |
 #+-----------------+
+if [ `boot2docker status` != "running" ]; then
+    eval `boot2docker up`;
+fi
 eval `boot2docker shellinit 2>/dev/null`
 
 #+-----------+

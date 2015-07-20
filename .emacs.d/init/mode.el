@@ -12,6 +12,7 @@
           (lambda ()
             (setq indent-tabs-mode)
             (setq tab-width 4)))
+
 (add-hook 'web-mode-hook
           (lambda ()
             (setq indent-tabs-mode)

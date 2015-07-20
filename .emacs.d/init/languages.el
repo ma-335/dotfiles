@@ -12,19 +12,14 @@
 
 (add-hook 'sh-mode-hook 'setup-sh-mode-indent)
 
-;;; scala
-(require 'scala-mode-auto)
+;; ;;; scala
+;; (require 'scala-mode-auto)
 
 ;;; c++
 ;;;   http://www.emacswiki.org/emacs/CPlusPlusMode
 (defun my-c++-mode-hook ()
   (c-set-style "stroustrup"))
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
-
-;;; go
-(require 'go-mode-load)
-(add-hook 'go-mode-hook
-	  '(lambda () (setq tab-width 2)))
 
 ;;; web-mode for *.jsx
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))

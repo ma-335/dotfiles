@@ -14,6 +14,7 @@
 (setq require-final-newline t)
 (setq-default indent-tabs-mode nil)
 (setq c-basic-offset 2)
+(setq scroll-conservatively 1)
 
 (show-paren-mode t)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -27,3 +28,7 @@
 (setq linum-format "%3d ")
 
 (menu-bar-mode 0)
+
+;;; Details in `M-x describe-variable grep-command`
+(require 'grep)
+(grep-apply-setting 'grep-command "grep -nHI -r ./* -e ")

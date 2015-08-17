@@ -11,13 +11,13 @@ export PATH=$PATH:$GOPATH/bin
 
 export JAVA_HOME=/usr
 
-#+-----------------+
-#| Docker on MacOS |
-#+-----------------+
-if [ `boot2docker status` != "running" ]; then
-    eval `boot2docker up`;
+#+------------------------+
+#| Docker Toolbox for Mac |
+#+------------------------+
+if [ `docker-machine status default` != "Running" ]; then
+    echo "default docker-machine is not running"
 fi
-eval `boot2docker shellinit 2>/dev/null`
+eval "$(docker-machine env default)"
 
 #+-----------+
 #|   ALIAS   |

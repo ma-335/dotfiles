@@ -4,5 +4,15 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-(defvar masaori/packages '(color-theme zenburn-theme flycheck web-mode clojure-mode go-mode markdown-mode))
+(defvar masaori/packages '(color-theme
+                           zenburn-theme
+                           flycheck
+                           web-mode
+                           clojure-mode
+                           go-mode
+                           markdown-mode
+                           yaml-mode
+                           imenu-list
+                           helm
+                           helm-gtags))
 (dolist (pkg masaori/packages) (unless (package-installed-p pkg) (package-install pkg)))

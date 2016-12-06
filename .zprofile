@@ -3,13 +3,15 @@
 #+-----------+
 export PATH=$PATH:$HOME/opt/bin
 export PATH=$PATH:$HOME/opt/src/depot_tools
-export PATH=$PATH:/usr/local/Cellar/gettext/0.18.3.1/bin
+export PATH=$PATH:/usr/local/opt/gettext/bin
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 export GOPATH=$HOME/.go_modules
 export PATH=$PATH:$GOPATH/bin
 
-export JAVA_HOME=/usr
+export JAVA_HOME=`/usr/libexec/java_home`
+
+export LC_ALL='ja_JP.UTF-8'
 
 #+------------------------+
 #| Docker Toolbox for Mac |

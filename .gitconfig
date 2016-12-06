@@ -13,9 +13,10 @@
 	d = diff
 	r = reset
 	s = status
-[pager]
-        log = diff-highlight | less
-        show = diff-highlight | less
-        diff = diff-highlight | less
+        ct = "!f(){ git c -b $1 refs/tags/$1; }; f"
+# [pager]
+#         log = diff-highlight | less
+#         show = diff-highlight | less
+#         diff = diff-highlight | less
 [push]
 	default = simple

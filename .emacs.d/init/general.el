@@ -32,3 +32,9 @@
 ;;; Details in `M-x describe-variable grep-command`
 (require 'grep)
 (grep-apply-setting 'grep-command "grep -nHI -r ./* -e ")
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(require 'imenu-list)
+(setq imenu-list-focus-after-activation t)
+(setq imenu-list-size 30)

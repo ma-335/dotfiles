@@ -18,4 +18,7 @@
 
 (global-set-key (kbd "C-x j") 'delete-indentation)
 
-(global-set-key (kbd "C-x C-b") 'buffer-menu)
+;; (global-set-key (kbd "C-x C-b") 'buffer-menu)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+
+(global-set-key (kbd "C-x i") #'imenu-list-minor-mode)

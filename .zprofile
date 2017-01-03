@@ -9,17 +9,7 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 export GOPATH=$HOME/.go_modules
 export PATH=$PATH:$GOPATH/bin
 
-export JAVA_HOME=`/usr/libexec/java_home`
-
 export LC_ALL='ja_JP.UTF-8'
-
-#+------------------------+
-#| Docker Toolbox for Mac |
-#+------------------------+
-if [ `docker-machine status default` != "Running" ]; then
-    echo "default docker-machine is not running"
-fi
-eval "$(docker-machine env default)"
 
 #+-----------+
 #|   ALIAS   |

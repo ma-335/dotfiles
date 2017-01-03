@@ -3,14 +3,9 @@ autoload -Uz colors; colors
 autoload -Uz is-at-least
 
 #+------------+
-#|  antigen   |
-#+------------+
-#source ~/.zsh/antigen.conf.zsh
-
-#+------------+
 #| COMPLETION |
 #+------------+
-fpath=(~/github/zsh-users/zsh-completions/src /usr/local/share/zsh/site-functions /usr/local/share/zsh-completions ~/.zsh $fpath)
+fpath=(/usr/local/share/zsh/site-functions /usr/local/share/zsh-completions $fpath)
 autoload -U compinit
 compinit
 bindkey "\e[Z" reverse-menu-complete
@@ -19,7 +14,6 @@ zstyle ':completion:*' menu select=1
 #+------------+
 #|   PROMPT   |
 #+------------+
-
 PROMPT="%{${fg[green]}%}%m %(!.#.$) %{${reset_color}%}"
 PROMPT2="%{${fg[green]}%}%_> %{${reset_color}%}"
 SPROMPT="correct: %R -> %r [y,n,a,e]? "
@@ -86,18 +80,6 @@ if is-at-least 4.3.11; then
 fi
 
 function chpwd() { ls }
-
-#+------------+
-#| GNU SCREEN |
-#+------------+
-if [ ${STY} ]; then
-  preexec() {
-    echo -ne "\ek${1%% *}\e\\"
-  }
-  precmd() {
-    echo -ne "\ek$(basename $(print -P %~))\e\\"
-  }
-fi
 
 #+------------+
 #|    tmux    |

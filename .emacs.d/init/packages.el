@@ -4,8 +4,7 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-(defvar masaori/packages '(color-theme
-                           zenburn-theme
+(defvar masaori/packages '(zenburn-theme
                            flycheck
                            web-mode
                            clojure-mode

@@ -5,13 +5,23 @@
 (package-initialize)
 
 (defvar masaori/packages '(zenburn-theme
-                           flycheck
-                           web-mode
-                           clojure-mode
-                           go-mode
-                           markdown-mode
-                           yaml-mode
                            imenu-list
                            helm
-                           helm-gtags))
+                           helm-gtags
+                           helm-descbinds
+                           which-key
+                           go-mode
+                           lua-mode
+                           cmake-mode
+                           dockerfile-mode
+                           clang-format
+                           undo-tree
+                           flycheck
+                           gtags
+                           rtags
+                           flycheck-rtags
+                           powerline))
 (dolist (pkg masaori/packages) (unless (package-installed-p pkg) (package-install pkg)))
+
+;;; load packages in local
+(load "~/.emacs.d/pkg/clang-format.el")

@@ -3,5 +3,13 @@
 .emacs.d/backup/
 .emacs.d/elpa/
 .emacs.d/url/
+.emacs.d/bookmarks
 *.mo
 _build/
+.python-version
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+ETAGS
+CTAGS

@@ -1,4 +1,8 @@
-(add-hook 'lisp-mode-hook '(lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
+(add-hook 'lisp-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "RET") 'newline-and-indent)
+             (linum-mode t)))
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;; sh-mode
@@ -15,11 +19,6 @@
 ;; ;;; scala
 ;; (require 'scala-mode-auto)
 
-;;; c++
-;;;   http://www.emacswiki.org/emacs/CPlusPlusMode
-(defun my-c++-mode-hook ()
-  (c-set-style "stroustrup"))
-(add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
 ;;; web-mode for *.jsx
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))

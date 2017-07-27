@@ -1,4 +1,5 @@
 ;; Settings with go-mode
+(setq auto-mode-alist (append '(("\\.go$" . go-mode)) auto-mode-alist))
 
 (add-hook 'go-mode-hook
 	  '(lambda ()
@@ -7,4 +8,5 @@
              (flycheck-mode)
              (electric-pair-mode)))
 
-(add-hook 'before-save-hook 'gofmt-before-save)
+(add-hook 'go-mode-hook
+          (lambda () (add-hook 'before-save-hook 'gofmt-before-save nil 'local)))

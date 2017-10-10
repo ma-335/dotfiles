@@ -43,16 +43,9 @@
 
 (setq tab-width 2)
 
-;; for macos
-(setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
-(setq dired-listing-switches "-FlL --group-directories-first")
-
 (require 'which-key)
 (which-key-mode)
 (which-key-setup-side-window-right)
-
-(require 'osx-clipboard)
-(osx-clipboard-mode)
 
 (require 'undo-tree)
 (global-undo-tree-mode t)

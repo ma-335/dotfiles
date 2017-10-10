@@ -3,6 +3,7 @@
 .emacs.d/backup/
 .emacs.d/elpa/
 .emacs.d/url/
+.emacs.d/irony/
 .emacs.d/bookmarks
 *.mo
 _build/

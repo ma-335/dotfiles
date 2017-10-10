@@ -20,7 +20,9 @@
                            gtags
                            rtags
                            flycheck-rtags
-                           powerline))
+                           company-rtags
+                           powerline
+                           undo-tree))
 (dolist (pkg masaori/packages) (unless (package-installed-p pkg) (package-install pkg)))
 
 ;;; load packages in local

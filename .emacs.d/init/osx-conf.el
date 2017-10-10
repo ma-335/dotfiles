@@ -11,4 +11,4 @@
 (if (file-exists-p "/usr/local/opt/coreutils/libexec/gnubin/ls")
     (progn
      (setq insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls")
-     (setq dired-listing-switches "-FlL --group-directories-first")))
+     (setq dired-listing-switches "-AFlL --group-directories-first")))
